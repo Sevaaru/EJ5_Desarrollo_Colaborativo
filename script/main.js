@@ -6,6 +6,7 @@ function submitAnswer(button) {
     const correctAnswers = questionDiv.dataset.correct.split(',').map(Number);
     const selectedAnswers = [];
 
+    // Obtener respuestas seleccionadas
     if (type === "radio") {
         const selected = questionDiv.querySelector('input[type="radio"]:checked');
         if (selected) selectedAnswers.push(Number(selected.value));
@@ -16,11 +17,14 @@ function submitAnswer(button) {
     }
 
     const resultDiv = questionDiv.querySelector('.result');
+
+    // Validar respuestas
     if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctAnswers.sort())) {
         resultDiv.textContent = "Correcto";
         resultDiv.style.color = "green";
     } else {
-        resultDiv.textContent = "Incorrecto";
+        // Mostrar solo los números de las respuestas correctas
+        resultDiv.textContent = correctAnswers.join(', ');
         resultDiv.style.color = "red";
     }
 
@@ -28,6 +32,12 @@ function submitAnswer(button) {
     button.disabled = true;
     resultDiv.style.fontWeight = "bold";
 }
+
+
+
+
+
+
 function calculateFinalScore() {
     const finalScoreDiv = document.querySelector('.final-score');
     finalScoreDiv.textContent = `Tu nota final es: ${totalScore.toFixed(2)}`;
