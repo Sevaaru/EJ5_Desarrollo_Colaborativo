@@ -26,3 +26,7 @@ function submitAnswer(button) {
         totalScore -= 0.25;
     }
 }
+function calculateFinalScore() {
+    const finalScoreDiv = document.querySelector('.final-score');
+    finalScoreDiv.textContent = `Tu nota final es: ${totalScore.toFixed(2)}`;
+}
