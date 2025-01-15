@@ -30,3 +30,14 @@ function calculateFinalScore() {
     const finalScoreDiv = document.querySelector('.final-score');
     finalScoreDiv.textContent = `Tu nota final es: ${totalScore.toFixed(2)}`;
 }
+
+function resetAnswer(button) {
+    const questionDiv = button.closest('.question');
+    questionDiv.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.checked = false;
+    });
+    questionDiv.querySelectorAll('input[type="checkbox"]').forEach(input => {
+        input.checked = false;
+    });
+    questionDiv.querySelector('.result').textContent = "";
+}
