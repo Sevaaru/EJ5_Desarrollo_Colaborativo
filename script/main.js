@@ -19,12 +19,14 @@ function submitAnswer(button) {
     if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctAnswers.sort())) {
         resultDiv.textContent = "Correcto";
         resultDiv.style.color = "green";
-        totalScore += 1;
     } else {
         resultDiv.textContent = "Incorrecto";
         resultDiv.style.color = "red";
-        totalScore -= 0.25;
     }
+
+    // Desactivar el botón después de responder
+    button.disabled = true;
+    resultDiv.style.fontWeight = "bold";
 }
 function calculateFinalScore() {
     const finalScoreDiv = document.querySelector('.final-score');
