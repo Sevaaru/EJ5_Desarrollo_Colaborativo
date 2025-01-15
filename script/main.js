@@ -31,6 +31,7 @@ function submitAnswer(button) {
     if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctAnswers.sort())) {
         resultDiv.textContent = "Correcto";
         resultDiv.style.color = "green";
+        totalScore += 1;
     } else {
         // Mostrar solo los números de las respuestas correctas
         const correctNumbers = correctAnswers.map(num => num + 1); // Convertir índice a 1, 2, 3...
@@ -47,10 +48,10 @@ function submitAnswer(button) {
 
 function calculateFinalScore() {
     const finalScoreDiv = document.querySelector('.final-score');
-    finalScoreDiv.textContent = `Tu nota final es: ${finalScore.toFixed(2)}`;
+    finalScoreDiv.textContent = `Tu nota final es: ${totalScore.toFixed(2)}`;
 
     // Cambiar color de fondo según la nota
-    if (finalScore >= 5) {
+    if (totalScore >= 5) {
         document.body.style.backgroundColor = '#90EE90'; // Verde claro
         finalScoreDiv.innerHTML += '<br>¡Felicidades! Has aprobado! 🎉';
     } else {

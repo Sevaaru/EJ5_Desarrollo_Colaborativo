@@ -68,3 +68,9 @@ button:disabled {
   color: #004080;
   text-align: center;
 }
+.check {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
