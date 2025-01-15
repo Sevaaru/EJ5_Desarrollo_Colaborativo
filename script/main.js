@@ -6,7 +6,6 @@ function submitAnswer(button) {
     const correctAnswers = questionDiv.dataset.correct.split(',').map(Number);
     const selectedAnswers = [];
 
-    // Obtener respuestas seleccionadas
     if (type === "radio") {
         const selected = questionDiv.querySelector('input[type="radio"]:checked');
         if (selected) {
@@ -22,14 +21,11 @@ function submitAnswer(button) {
     }
 
     const resultDiv = questionDiv.querySelector('.result');
-
-    // Validar respuestas
     if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctAnswers.sort())) {
         resultDiv.textContent = "Correcto";
         resultDiv.style.color = "green";
     } else {
-        // Mostrar solo los números de las respuestas correctas
-        resultDiv.textContent = correctAnswers.join(', ');
+        resultDiv.textContent = "Incorrecto";
         resultDiv.style.color = "red";
     }
 
@@ -39,28 +35,6 @@ function submitAnswer(button) {
 }
 
 function calculateFinalScore() {
-    const questions = document.querySelectorAll('.question');
-    let unansweredQuestions = 0;
-    let correctAnswers = 0;
-    let totalQuestions = questions.length;
-
-    questions.forEach(question => {
-        const result = question.querySelector('.result');
-        if (!result.textContent) {
-            unansweredQuestions++;
-        } else if (result.textContent === "Correcto") {
-            correctAnswers++;
-        }
-    });
-
-    if (unansweredQuestions > 0) {
-        const confirm = window.confirm(`Tienes ${unansweredQuestions} pregunta(s) sin responder. ¿Deseas ver tu nota final de todas formas?`);
-        if (!confirm) {
-            return;
-        }
-    }
-
-    const finalScore = (correctAnswers / totalQuestions) * 10;
     const finalScoreDiv = document.querySelector('.final-score');
     finalScoreDiv.textContent = `Tu nota final es: ${finalScore.toFixed(2)}`;
 
