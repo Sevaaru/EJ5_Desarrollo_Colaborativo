@@ -137,6 +137,36 @@
     <div class="result"></div>
 </div>
 
+<!-- Pregunta 9 -->
+<div class="question" data-type="radio" data-correct="0">
+    <h3>9. ¿Cuáles de las siguientes opciones son comandos válidos para eliminar una rama en Git?</h3>
+    <div>
+        <input type="checkbox" name="q4" value="0"> git branch -d &lt;nombre-rama&gt;<br>
+        <input type="checkbox" name="q4" value="1"> git branchio -D &lt;nombre-rama&gt;<br>
+        <input type="checkbox" name="q4" value="2"> git delete &lt;nombre-rama&gt;<br>
+        <input type="checkbox" name="q4" value="3"> git remove &lt;nombre-rama&gt;<br>
+    </div>
+    <button onclick="submitAnswer(this)">Grabar Respuesta</button>
+    <div class="result"></div>
+</div>
+
+<!-- Pregunta 5 -->
+<div class="question" data-type="checkbox" data-correct="0,1,3">
+    <h3>10. ¿Qué acciones puedes realizar con el comando git reset?</h3>
+    <div>
+        <input type="checkbox" name="q5" value="0"> Deshacer un commit y mantener los cambios en el área de trabajo<br>
+        <input type="checkbox" name="q5" value="1"> Eliminar los cambios en el área de trabajo y en el índice<br>
+        <input type="checkbox" name="q5" value="2"> Eliminar un commit de la historia del repositorio<br>
+        <input type="checkbox" name="q5" value="3"> Volver al estado de un commit anterior<br>
+    </div>
+    <button onclick="submitAnswer(this)">Grabar Respuesta</button>
+    <div class="result"></div>
+
+    <button onclick="calculateFinalScore()">Mostrar Nota Final</button>
+    <div class="final-score"></div>
+  
+    <script src="script/main.js"></script>
+</div>
 </div>
 </body>
 </html>
