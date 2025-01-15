@@ -9,7 +9,12 @@ function submitAnswer(button) {
     // Obtener respuestas seleccionadas
     if (type === "radio") {
         const selected = questionDiv.querySelector('input[type="radio"]:checked');
-        if (selected) selectedAnswers.push(Number(selected.value));
+        if (selected) {
+            selectedAnswers.push(Number(selected.value));
+        } else if (questionDiv.dataset.correct === "0" && questionDiv.querySelector('input[name="q1"]')) {
+            alert("Por favor, selecciona una respuesta para la primera pregunta.");
+            return;
+        }
     } else if (type === "checkbox") {
         questionDiv.querySelectorAll('input[type="checkbox"]:checked').forEach(input => {
             selectedAnswers.push(Number(input.value));
@@ -32,11 +37,6 @@ function submitAnswer(button) {
     button.disabled = true;
     resultDiv.style.fontWeight = "bold";
 }
-
-
-
-
-
 
 function calculateFinalScore() {
     const questions = document.querySelectorAll('.question');
@@ -73,6 +73,7 @@ function calculateFinalScore() {
         finalScoreDiv.innerHTML += '<br>Lo siento, necesitas mejorar 😢';
     }
 }
+
 function resetAnswer(button) {
     const questionDiv = button.closest('.question');
     questionDiv.querySelectorAll('input[type="radio"]').forEach(input => {
