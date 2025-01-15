@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <button class="check" onclick="calculateFinalScore()">Comprobar nota</button>
+    </header>
     <h1>Test Interactivo</h1>
   <!-- Pregunta 1 -->
   <div class="question" data-type="radio" data-correct="0">
@@ -180,7 +183,6 @@
     <button onclick="resetAnswer(this)">Anular Respuesta</button>
     <div class="result"></div>
 
-    <button onclick="calculateFinalScore()">Calcular Nota Final</button>
     <div class="final-score"></div>
   
     <script src="script/main.js"></script>
