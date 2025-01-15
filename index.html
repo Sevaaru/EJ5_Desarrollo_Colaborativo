@@ -7,6 +7,46 @@
 </head>
 <body>
     <h1>Test Interactivo</h1>
+  <!-- Pregunta 1 -->
+  <div class="question" data-type="radio" data-correct="1">
+    <h3>1. ¿Cuál de las siguientes etiquetas HTML se utiliza para insertar una imagen?</h3>
+    <div>
+        <input type="radio" name="q1" value="0"> img<br>
+        <input type="radio" name="q1" value="1"> image<br>
+        <input type="radio" name="q1" value="2"> picture<br>
+        <input type="radio" name="q1" value="3"> src<br>
+    </div>
+    <button onclick="submitAnswer(this)">Grabar Respuesta</button>
+    <div class="result"></div>
+</div>
 
+<!-- Pregunta 2 -->
+<div class="question" data-type="checkbox" data-correct="0,2">
+    <h3>2. ¿Qué lenguajes son de programación?</h3>
+    <div>
+        <input type="checkbox" name="q2" value="0"> Java<br>
+        <input type="checkbox" name="q2" value="1"> Valve<br>
+        <input type="checkbox" name="q2" value="2"> Python<br>
+        <input type="checkbox" name="q2" value="3"> Steam<br>
+    </div>
+    <button onclick="submitAnswer(this)">Grabar Respuesta</button>
+    <div class="result"></div>
+</div>
+
+<!-- Pregunta 3 -->
+<div class="question" data-type="radio" data-correct="2">
+    <h3>3. ¿Qué hace Apache como servidor web??</h3>
+    <div>
+        <input type="radio" name="q3" value="0"> Enviar correos electrónicos<br>
+        <input type="radio" name="q3" value="1"> Servir páginas web<br>
+        <input type="radio" name="q3" value="2"> Almacenar bases de datos<br>
+        <input type="radio" name="q3" value="3"> Ejecutar aplicaciones móviles<br>
+    </div>
+    <button onclick="submitAnswer(this)">Grabar Respuesta</button>
+    <div class="result"></div>
+</div>
+
+
+</div>
 </body>
 </html>
