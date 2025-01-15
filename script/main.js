@@ -27,6 +27,23 @@ function submitAnswer(button) {
     }
 }
 function calculateFinalScore() {
+    const questions = document.querySelectorAll('.question');
+    let unansweredQuestions = 0;
+
+    questions.forEach(question => {
+        const result = question.querySelector('.result');
+        if (!result.textContent) {
+            unansweredQuestions++;
+        }
+    });
+
+    if (unansweredQuestions > 0) {
+        const confirm = window.confirm(`Tienes ${unansweredQuestions} pregunta(s) sin responder. ¿Deseas ver tu nota final de todas formas?`);
+        if (!confirm) {
+            return;
+        }
+    }
+
     const finalScoreDiv = document.querySelector('.final-score');
     finalScoreDiv.textContent = `Tu nota final es: ${totalScore.toFixed(2)}`;
 }
