@@ -21,3 +21,9 @@ body {
     font-size: 1.2em;
     color: #333;
 }
+header .check {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
